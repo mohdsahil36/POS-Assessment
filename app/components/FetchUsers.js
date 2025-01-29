@@ -60,10 +60,12 @@ const FetchUsers = () => {
                         <p>Loading users...</p>
                     ) : (
                         users.map((user) => (
-                            <li key={user.id} className="py-3 mx-5 border-b border-b-gray-300 bg-[#F6F6EF]">
-                                <button onClick={() => handleUserSelect(user.id)}>
-                                    {user.name} <Plus size={2} color="black" />
-                                </button>
+                            <li key={user.id} className=" bg-[#F6F6EF] font-semibold">
+                                <div className="mx-5 py-3 border-b border-b-gray-300">
+                                    <button onClick={() => handleUserSelect(user.id)}>
+                                        {user.name} <Plus size={2} color="black" />
+                                    </button>
+                                </div>
                             </li>
                         ))
                     )}
