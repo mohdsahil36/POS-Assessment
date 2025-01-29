@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { fetchSkillsetData } from "../lib/fetchSkillsetData";
 import UserSkillset from "./UserSkillset";
 import { Plus } from 'lucide-react';
+import { CircleUserRound } from 'lucide-solid';
 
 const FetchUsers = () => {
     const [users, setUsers] = useState([]);
@@ -60,11 +61,14 @@ const FetchUsers = () => {
                         <p>Loading users...</p>
                     ) : (
                         users.map((user) => (
-                            <li key={user.id} className=" bg-[#F6F6EF] font-semibold">
-                                <div className="mx-5 py-3 border-b border-b-gray-300">
-                                    <button onClick={() => handleUserSelect(user.id)}>
-                                        {user.name} <Plus size={2} color="black" />
-                                    </button>
+                            <li key={user.id} className="bg-[#F6F6EF] font-semibold">
+                                <div className=" py-3 border-b border-b-gray-300 flex justify-between max-w-[75%] mx-auto">
+                                    <div className="flex flex-col justify-center">
+                                        <span>{user.name}</span>
+                                    </div>
+                                    <div className="flex flex-col justify-center">
+                                        <Plus className="w-5 h-5 cursor-pointer" color="#A497FD" onClick={() => handleUserSelect(user.id)} />
+                                    </div>
                                 </div>
                             </li>
                         ))
